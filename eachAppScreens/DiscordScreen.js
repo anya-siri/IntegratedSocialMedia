@@ -1,18 +1,14 @@
 import {View,Text,StyleSheet} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 function DiscordScreen(){
-    return(
-        <View style={styles.container}>
-            <Text>Discord Screen</Text>
-        </View>
-    );
-}
 
+return (
+    <WebView
+      source={{ uri: 'https://discord.com/bots/trending' }}
+      style={{ flex: 1 }}
+    />
+  );
+};
 export default DiscordScreen;
 
-const styles=StyleSheet.create({
-    container:{
-        flex:1,
-        padding:16,
-    },
-});

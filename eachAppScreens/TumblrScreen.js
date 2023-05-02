@@ -1,18 +1,16 @@
 import {View,Text,StyleSheet} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 function TumblrScreen(){
-    return(
-        <View style={styles.container}>
-            <Text>Tumblr Screen</Text>
-        </View>
-    );
-}
+
+return (
+    <WebView
+      source={{ uri: 'https://www.tumblr.com/explore/trending' }}
+      style={{ flex: 1 }}
+    />
+  );
+};
+
 
 export default TumblrScreen;
 
-const styles=StyleSheet.create({
-    container:{
-        flex:1,
-        padding:16,
-    },
-});

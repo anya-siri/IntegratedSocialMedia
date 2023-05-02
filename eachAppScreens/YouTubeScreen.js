@@ -1,18 +1,17 @@
 import {View,Text,StyleSheet} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 function YouTubeScreen(){
-    return(
-        <View style={styles.container}>
-            <Text>YouTube Screen</Text>
-        </View>
-    );
+    const youtubeUrl = 'https://www.youtube.com/feed/trending?gl=IN';
+
+  return (
+    <WebView
+      source={{ uri: youtubeUrl }}
+      style={{ flex: 1 }}
+    />
+  );
+  
 }
 
 export default YouTubeScreen;
 
-const styles=StyleSheet.create({
-    container:{
-        flex:1,
-        padding:16,
-    },
-});

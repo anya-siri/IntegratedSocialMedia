@@ -1,18 +1,15 @@
 import {View,Text,StyleSheet} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 function RedditScreen(){
-    return(
-        <View style={styles.container}>
-            <Text>Reddit Screen</Text>
-        </View>
-    );
-}
+
+return (
+    <WebView
+      source={{ uri: 'https://www.reddit.com/r/popular/?sort=hot' }}
+      style={{ flex: 1 }}
+    />
+  );
+};
 
 export default RedditScreen;
 
-const styles=StyleSheet.create({
-    container:{
-        flex:1,
-        padding:16,
-    },
-});

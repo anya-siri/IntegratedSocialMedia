@@ -1,11 +1,15 @@
 import {View,Text,StyleSheet} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 function FacebookScreen(){
-    return(
-        <View style={styles.container}>
-            <Text>Facebook Screen</Text>
-        </View>
-    );
+   
+    const facebookUrl = 'https://www.facebook.com/hashtag/trending/';
+
+    return (
+      <WebView
+        source={{ uri: facebookUrl }}
+        style={{ flex: 1 }}
+      />)
 }
 
 export default FacebookScreen;
