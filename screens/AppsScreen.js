@@ -1,5 +1,7 @@
-import { FlatList, StyleSheet, ImageBackground } from "react-native";
+import React from 'react';
+import { View, StatusBar, FlatList, StyleSheet, ImageBackground } from 'react-native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
@@ -18,7 +20,9 @@ import DiscordScreen from "../eachAppScreens/DiscordScreen";
 
 const Stack = createNativeStackNavigator();
 
-function AppListScreen({ navigation }) {
+function AppListScreen() {
+    const navigation = useNavigation();
+
     function renderCategoryItem(itemData) {
         function pressHandler() {
             navigation.navigate(itemData.item.title);
@@ -28,7 +32,7 @@ function AppListScreen({ navigation }) {
             <Box
                 title={itemData.item.title}
                 color={itemData.item.color}
-                source={itemData.item.image}
+                source={itemData.item.imageUri}
                 onPress={pressHandler}
             />
         );
@@ -44,42 +48,64 @@ function AppListScreen({ navigation }) {
     );
 }
 
-
-function AppsScreen() {
+function LinearGradientScreen() {
     return (
-        <LinearGradient colors={['#D36C6C', '#ffffff', '#B6E3EE']} style={styles.rootScreen}>
+        <LinearGradient colors={['#E33489', '#E58541']} style={styles.rootScreen}>
             <ImageBackground
                 style={styles.rootScreen}
                 imageStyle={styles.image}
                 source={require('../assets/image1.png')}
             >
-                <Stack.Navigator>
-                    <Stack.Screen name="Choose a social media app:-" component={AppListScreen} />
-                    <Stack.Screen name="Instagram" component={InstagramScreen} />
-                    <Stack.Screen name="Facebook" component={FacebookScreen} />
-                    <Stack.Screen name="Twitter" component={TwitterScreen} />
-                    <Stack.Screen name="YouTube" component={YouTubeScreen} />
-                    <Stack.Screen name="Snapchat" component={SnapchatScreen} />
-                    <Stack.Screen name="LinkedIn" component={LinkedInScreen} />
-                    <Stack.Screen name="Reddit" component={RedditScreen} />
-                    <Stack.Screen name="Pinterest" component={PinterestScreen} />
-                    <Stack.Screen name="Tumblr" component={TumblrScreen} />
-                    <Stack.Screen name="Discord" component={DiscordScreen} />
-                </Stack.Navigator>
+                <AppListScreen />
             </ImageBackground>
         </LinearGradient>
+    );
+}
+
+function AppsScreen() {
+    return (
+        <View style={{ flex: 1 }}>
+            <StatusBar barStyle='light-content' backgroundColor='#171244' />
+            <Stack.Navigator
+                screenOptions={{
+                    headerTintColor: '#FFFFFF',
+                    headerStyle: {
+                        backgroundColor: '#0F0E0E',
+                    },
+                }}>
+                <Stack.Screen
+                    name="Choose a social media app:-"
+                    component={LinearGradientScreen}
+                    options={{
+                        headerTintColor: '#FFFFFF',
+                        headerStyle: {
+                            backgroundColor: '#79154A',
+                        },
+                    }}
+                />
+                <Stack.Screen name="Instagram" component={InstagramScreen} />
+                <Stack.Screen name="Facebook" component={FacebookScreen} />
+                <Stack.Screen name="Twitter" component={TwitterScreen} />
+                <Stack.Screen name="YouTube" component={YouTubeScreen} />
+                <Stack.Screen name="Snapchat" component={SnapchatScreen} />
+                <Stack.Screen name="LinkedIn" component={LinkedInScreen} />
+                <Stack.Screen name="Reddit" component={RedditScreen} />
+                <Stack.Screen name="Pinterest" component={PinterestScreen} />
+                <Stack.Screen name="Tumblr" component={TumblrScreen} />
+                <Stack.Screen name="Discord" component={DiscordScreen} />
+            </Stack.Navigator>
+        </View>
     );
 }
 
 export default AppsScreen;
 
 const styles = StyleSheet.create({
-
     rootScreen: {
         flex: 1,
         backgroundColor: 'transparent',
     },
     image: {
-        opacity: 0.1,
+        opacity: 0.2,
     },
 });

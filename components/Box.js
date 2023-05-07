@@ -4,7 +4,7 @@ function Box({ title, color, source, onPress }) {
     return (
         <View style={[styles.boxItem, { backgroundColor: color }]}>
             <Pressable
-                android_ripple={{ color: '#6E4545' }}
+                android_ripple={{ color: '#CA9595' }}
                 style={({ pressed }) => [
                     styles.button,
                     pressed ? styles.buttonPressed : null,
@@ -23,7 +23,8 @@ function Box({ title, color, source, onPress }) {
 const styles = StyleSheet.create({
     boxItem: {
         flex: 1,
-        margin: 10,
+        marginHorizontal: 10,
+        marginTop:15,
         height: 100,
         borderRadius: 8,
         elevation: 4,
@@ -35,7 +36,6 @@ const styles = StyleSheet.create({
         overflow: Platform.OS === 'android' ? 'hidden' : 'visible',
         borderWidth: 1,
         borderColor: 'black',
-        padding: 10,
         flexDirection: 'row',
         alignItems: 'center',
         overflow: 'hidden',
@@ -52,8 +52,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     logo: {
-        width: 25,
-        height: 25,
+        width: 30,
+        height: 30,
         marginBottom: 8,
     },
 });

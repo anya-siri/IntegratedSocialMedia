@@ -1,4 +1,3 @@
-import {View,Text,StyleSheet} from 'react-native';
 import { WebView } from 'react-native-webview';
 
 function LinkedInScreen(){

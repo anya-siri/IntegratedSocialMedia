@@ -1,10 +1,5 @@
-import {View,Text,StyleSheet} from 'react-native';
-import { FlatList } from 'react-native';
-import React, { useEffect, useState } from 'react';
-// import React from 'react';
+import React from 'react';
 import { WebView } from 'react-native-webview';
-
-   
 
 function InstagramScreen() {
 
