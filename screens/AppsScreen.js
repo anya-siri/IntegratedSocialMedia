@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, FlatList, StyleSheet, ImageBackground } from 'react-native';
+import { View, StatusBar, FlatList, StyleSheet, ImageBackground, Image } from 'react-native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -48,6 +48,12 @@ function AppListScreen() {
     );
 }
 
+function YouTubeHeader() {
+    return (
+        <Image source={require('../assets/applogos2/youtube.png')} style={{ width: 125, height: 35 }} />
+    );
+}
+
 function LinearGradientScreen() {
     return (
         <LinearGradient colors={['#E33489', '#E58541']} style={styles.rootScreen}>
@@ -65,7 +71,7 @@ function LinearGradientScreen() {
 function AppsScreen() {
     return (
         <View style={{ flex: 1 }}>
-            <StatusBar barStyle='light-content' backgroundColor='#171244' />
+            <StatusBar barStyle='light-content' backgroundColor='#000000' />
             <Stack.Navigator
                 screenOptions={{
                     headerTintColor: '#FFFFFF',
@@ -86,7 +92,15 @@ function AppsScreen() {
                 <Stack.Screen name="Instagram" component={InstagramScreen} />
                 <Stack.Screen name="Facebook" component={FacebookScreen} />
                 <Stack.Screen name="Twitter" component={TwitterScreen} />
-                <Stack.Screen name="YouTube" component={YouTubeScreen} />
+                <Stack.Screen name="YouTube"
+                    component={YouTubeScreen}
+                    options={{
+                        headerTintColor: '#000000',
+                        headerStyle: {
+                            backgroundColor: '#FFFFFF',
+                        },
+                        headerTitle: () => <YouTubeHeader />,
+                    }} />
                 <Stack.Screen name="Snapchat" component={SnapchatScreen} />
                 <Stack.Screen name="LinkedIn" component={LinkedInScreen} />
                 <Stack.Screen name="Reddit" component={RedditScreen} />
