@@ -1,3 +1,22 @@
+import {View,Text,StyleSheet} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { WebView } from 'react-native-webview';
+
+const TwitterScreen = () => {
+
+    return (
+        <View style={{ flex: 1 }}>
+          <WebView
+            source={{ uri: 'https://twitter.com/i/trends' }}
+            style={{ flex: 1 }}
+          />
+        </View>
+      );
+}
+
+export default TwitterScreen;
+
+
 // import React, { useState, useEffect, useCallback } from 'react';
 // import { View, Text, FlatList, TextInput, Button } from 'react-native';
 // import axios from 'axios';
@@ -91,74 +110,81 @@
 // export default TwitterScreen;
 
 
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import axios from 'axios';
 
-export default function TwitterScreen() {
-  const [trendingTweets, setTrendingTweets] = useState([]);
 
-  useEffect(() => {
-    axios.get('https://api.twitter.com/1.1/trends/place.json', {
-      headers: {
-        'Authorization': 'AAAAAAAAAAAAAAAAAAAAAMGwnQEAAAAAH7vRXV7RULyXt9xgC3glQ7UQ7CA%3D2VsvvJ3Ay1d3457XY00fcfim0FctJGjPuJuGmZRwYkUbIlDcYu'
-      },
-      params: {
-        id: '1' // Use 1 for global trends, or get the WOEID for other locations
-      }
-    })
-    .then(response => {
-      const trends = response.data[0].trends;
-      setTrendingTweets(trends);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  }, []);
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Trending Tweets and Hashtags</Text>
-      <View style={styles.trendingContainer}>
-        {trendingTweets.map((trend, index) => (
-          <View key={index} style={styles.trendingItem}>
-            <Text style={styles.trendingRank}>{index + 1}</Text>
-            <Text style={styles.trendingText}>{trend.name}</Text>
-          </View>
-        ))}
-      </View>
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-  trendingContainer: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-  },
-  trendingItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  trendingRank: {
-    fontWeight: 'bold',
-    marginRight: 10,
-  },
-  trendingText: {
-    fontSize: 16,
-  },
-});
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { StyleSheet, Text, View } from 'react-native';
+// import axios from 'axios';
+
+// export default function TwitterScreen() {
+//   const [trendingTweets, setTrendingTweets] = useState([]);
+
+//   useEffect(() => {
+//     axios.get('https://api.twitter.com/1.1/trends/place.json', {
+//       headers: {
+//         'Authorization': 'AAAAAAAAAAAAAAAAAAAAAMGwnQEAAAAAH7vRXV7RULyXt9xgC3glQ7UQ7CA%3D2VsvvJ3Ay1d3457XY00fcfim0FctJGjPuJuGmZRwYkUbIlDcYu'
+//       },
+//       params: {
+//         id: '1' // Use 1 for global trends, or get the WOEID for other locations
+//       }
+//     })
+//     .then(response => {
+//       const trends = response.data[0].trends;
+//       setTrendingTweets(trends);
+//     })
+//     .catch(error => {
+//       console.error(error);
+//     });
+//   }, []);
+
+//   return (
+//     <View style={styles.container}>
+//       <Text style={styles.heading}>Trending Tweets and Hashtags</Text>
+//       <View style={styles.trendingContainer}>
+//         {trendingTweets.map((trend, index) => (
+//           <View key={index} style={styles.trendingItem}>
+//             <Text style={styles.trendingRank}>{index + 1}</Text>
+//             <Text style={styles.trendingText}>{trend.name}</Text>
+//           </View>
+//         ))}
+//       </View>
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 20,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   heading: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     marginBottom: 20,
+//   },
+//   trendingContainer: {
+//     flexDirection: 'column',
+//     alignItems: 'flex-start',
+//   },
+//   trendingItem: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     marginBottom: 10,
+//   },
+//   trendingRank: {
+//     fontWeight: 'bold',
+//     marginRight: 10,
+//   },
+//   trendingText: {
+//     fontSize: 16,
+//   },
+// });
 

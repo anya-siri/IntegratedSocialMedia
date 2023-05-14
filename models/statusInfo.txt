@@ -5,8 +5,8 @@ APPS STATUS:-
 YouTube - DONE (Successfully implemented WITH AXIOS)
 Reddit - DONE (Successfully implemented WITH AXIOS)
 
-Twitter - 404 error
-Snapchat - network error
+Twitter - 404 error (webview available)
+Snapchat - network error (webview available)
 
 Instagram - webview
 Facebook - webview
