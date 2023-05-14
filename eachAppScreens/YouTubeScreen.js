@@ -97,7 +97,7 @@ function YoutubeScreen() {
     };
 
     const renderCategory = ({ item }) => (
-        <TouchableOpacity style={[styles.category, item.categoryId === selectedCategory.categoryId ? styles.selectedCategory:null]} onPress={() => handleCategoryPress(item)}>
+        <TouchableOpacity style={[styles.category, item.categoryId === selectedCategory.categoryId ? styles.selectedCategory : null]} onPress={() => handleCategoryPress(item)}>
             <Text style={styles.categoryTitle}>{item.name}</Text>
         </TouchableOpacity>
     );
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#E6E6E6',
         padding: 10,
         marginRight: 10,
-        marginBottom:10,
+        marginBottom: 10,
         borderRadius: 5,
         minWidth: 100,
         justifyContent: 'center',
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 4,
         borderBottomColor: '#FF4545',
         paddingBottom: 6
-      },
+    },
     categoryTitle: {
         fontWeight: 'bold',
         fontSize: 16,
@@ -227,5 +227,5 @@ const styles = StyleSheet.create({
     },
 });
 
-export default YoutubeScreen;        
+export default YoutubeScreen;
 

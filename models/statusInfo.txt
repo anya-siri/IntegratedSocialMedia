@@ -1,0 +1,16 @@
+Main user interface completed
+
+APPS STATUS:-
+
+YouTube - DONE (Successfully implemented WITH AXIOS)
+Reddit - DONE (Successfully implemented WITH AXIOS)
+
+Twitter - 404 error
+Snapchat - network error
+
+Instagram - webview
+Facebook - webview
+Pinterest - webview
+Tumblr - webview
+Discord - webview
+LinkedIn - error with webview

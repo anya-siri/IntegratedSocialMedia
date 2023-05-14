@@ -48,12 +48,6 @@ function AppListScreen() {
     );
 }
 
-function YouTubeHeader() {
-    return (
-        <Image source={require('../assets/applogos2/youtube.png')} style={{ width: 125, height: 35 }} />
-    );
-}
-
 function LinearGradientScreen() {
     return (
         <LinearGradient colors={['#E33489', '#E58541']} style={styles.rootScreen}>
@@ -96,14 +90,18 @@ function AppsScreen() {
                     component={YouTubeScreen}
                     options={{
                         headerTintColor: '#000000',
-                        headerStyle: {
-                            backgroundColor: '#FFFFFF',
-                        },
-                        headerTitle: () => <YouTubeHeader />,
+                        headerStyle: {backgroundColor: '#FFFFFF',},
+                        headerTitle: () => <Image source={require('../assets/applogos2/youtube.png')} style={{ width: 125, height: 35 }} />,
                     }} />
                 <Stack.Screen name="Snapchat" component={SnapchatScreen} />
                 <Stack.Screen name="LinkedIn" component={LinkedInScreen} />
-                <Stack.Screen name="Reddit" component={RedditScreen} />
+                <Stack.Screen name="Reddit"
+                    component={RedditScreen} 
+                    options={{
+                        headerTintColor: '#000000',
+                        headerStyle: {backgroundColor: '#FFFFFF',},
+                        headerTitle: () => <Image source={require('../assets/applogos2/reddit.png')} style={{ width: 110, height: 40}} />,
+                    }} />
                 <Stack.Screen name="Pinterest" component={PinterestScreen} />
                 <Stack.Screen name="Tumblr" component={TumblrScreen} />
                 <Stack.Screen name="Discord" component={DiscordScreen} />
