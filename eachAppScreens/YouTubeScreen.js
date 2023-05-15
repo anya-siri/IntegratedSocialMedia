@@ -57,7 +57,7 @@ function YoutubeScreen() {
                         maxResults: 50,
                         key: API_KEY
                     }
-                });
+                })
 
                 setVideos(response.data.items);
             }

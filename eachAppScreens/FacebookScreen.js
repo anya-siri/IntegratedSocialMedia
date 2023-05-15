@@ -3,7 +3,7 @@ import { WebView } from 'react-native-webview';
 
 function FacebookScreen(){
    
-    const facebookUrl = 'https://www.facebook.com/hashtag/trending/';
+    const facebookUrl = 'https://www.facebook.com/hashtag/posts/';
 
     return (
       <WebView
